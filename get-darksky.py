@@ -1,5 +1,8 @@
-#!python3
+#!/usr/local/bin/python3
 # coding: iso-8859-15
+
+import sys
+assert(sys.version_info >= (3,0))
 
 # Documentation for DarkSkyAPI https://pypi.org/project/darkskyapi-py/
 from DarkSkyAPI.DarkSkyAPI import DarkSkyClient
