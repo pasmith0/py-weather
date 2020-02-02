@@ -42,9 +42,13 @@ print("   Summary: " + client.raw_data['daily']['summary'])
 
 wind_speed = int(client.currently.windSpeed+.5) # round the wind speed
 
-print("   Now: %s %d°F, Wind %smph from %s (%s), Humidity %d%%, Barometer %.2f" %\
+#print("   Now: %s %d°F, Wind %smph from %s (%s), Humidity %d%%, Barometer %.2f" %\
+#      (client.currently.summary, int(client.currently.temperature+0.5),
+#      str(wind_speed),client.currently.windBearing,deg_to_compass2(client.currently.windBearing),
+#      client.currently.humidity*100,client.currently.pressure*MB_TO_INHG))
+print("   Now: %s %d°F, Wind %smph from the %s, Humidity %d%%, Barometer %.2f" %\
       (client.currently.summary, int(client.currently.temperature+0.5),
-      str(wind_speed),client.currently.windBearing,deg_to_compass2(client.currently.windBearing),
+      str(wind_speed),deg_to_compass2(client.currently.windBearing),
       client.currently.humidity*100,client.currently.pressure*MB_TO_INHG))
 
 for i in range(3): # only want 3 days
